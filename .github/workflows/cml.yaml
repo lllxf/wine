@@ -10,8 +10,9 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          pip3 install -r requirements.txt
-          python3 train.py
+          pip install -r requirements.txt
+          pip install sklearn
+          python train.py
 
           echo "Model metrics" 
           cat metrics.txt 
