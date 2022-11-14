@@ -6,10 +6,11 @@ jobs:
     container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v2
-      - name: cml-run
+      - name: cml_run
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          pip install sklearn
           pip3 install -r requirements.txt
           python3 train.py
 
